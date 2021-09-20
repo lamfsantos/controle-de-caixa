@@ -23,7 +23,7 @@ def create_table(conn, create_table_sql):
 def main():
     database = r"pythonsqlite.db"
 
-    sql_create_cadastro_table = """ CREATE TABLE IF NOT EXISTS prudutos (
+    sql_create_cadastro_table = """ CREATE TABLE IF NOT EXISTS produtos (
                                         id integer PRIMARY KEY,
                                         name text NOT NULL,
                                         picture text NOT NULL,

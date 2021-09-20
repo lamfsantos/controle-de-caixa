@@ -1,24 +1,24 @@
 function cadastrarProduto() {
   var name = $("#name").val()
-  var email= $("#picture").val()
-  var address= $("#barCod").val()
+  var picture= $("#picture").val()
+  var barCod= $("#barCod").val()
 
-var settings = {
-   "url": "http://localhost:5000/cadastrar",
-   "method": "POST",
-   "timeout": 0,
-   "headers": {
-     "Content-Type": "application/x-www-form-urlencoded"
-    },
-   "data": {
-     "name": name,
-     "picture": picture,
-     "barCod": barCod
+  var settings = {
+     "url": "http://localhost:5000/cadastrar",
+     "method": "POST",
+     "timeout": 0,
+     "headers": {
+       "Content-Type": "application/x-www-form-urlencoded"
+      },
+     "data": {
+       "name": name,
+       "picture": picture,
+       "barCod": barCod
+     }
    }
- }
- $.ajax(settings).done(function (response) {
-   console.log(response)
- }
+   $.ajax(settings).done(function (response) {
+     console.log(response)
+   })
 }
 //FAZER FUNÇÃO DOS BOTÕES, EU ACHO QUE TA ERRADO
 // function cadastro(){

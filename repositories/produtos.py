@@ -1,6 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-from models.Produto import Produto 
+from models.Produto import Produto
 
 database = r"pythonsqlite.db"
 
@@ -29,8 +29,8 @@ def insert(produto: Produto):
     try:
         conn = create_connection(database)
 
-        sql = ''' INSERT INTO users(name, )
-                  VALUES(?,?,?,?,?,?) '''
+        sql = ''' INSERT INTO produtos(name, picture, barCod)
+                  VALUES(?,?,?) '''
 
         cur = conn.cursor()
         cur.execute(sql, (produto.name, produto.picture, produto.barCod))

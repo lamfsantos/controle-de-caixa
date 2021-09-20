@@ -1,5 +1,5 @@
-from models import produto
-from repositories import produto as repo
+from models import Produto
+from repositories import produtos as repo
 
 def cadastrar(produto: Produto):
     try:

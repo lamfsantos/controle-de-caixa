@@ -1,8 +1,10 @@
 from flask import Blueprint
 from flask import render_template
+from flask import request
+from models.Produto import Produto
+from services import index as service
 
-
-index_blueprint = Blueprint("index", __name__, static_folder="../static", template_folder="../templates", static_url_path="/static/index")
+index_blueprint = Blueprint("index", __name__, static_folder="static", template_folder="templates")
 
 @index_blueprint.route("/", methods=['GET'])
 def index():
@@ -14,8 +16,6 @@ def cadastrar():
     produto = Produto(form["name"], form["picture"], form["barCod"])
     response = service.cadastrar(produto)
     return response
-
-
 
 @index_blueprint.route("/pesquisar", methods=['GET'])
 def find():
@@ -29,8 +29,8 @@ def PesquisaEditar():
     if pessoa == None:
         return "Não encontrado", 404
 
-    return render_template("infofProduto.html", pessoa = pessoa[0]), 200
-# Essa Parte eu não consegui fazer pq mudei algumas coisas, não tem mais 3 telas de pesquisa, agora são três botões con funções 
+    return render_template("infosProdutos.html", pessoa = pessoa[0]), 200
+# Essa Parte eu não consegui fazer pq mudei algumas coisas, não tem mais 3 telas de pesquisa, agora são três botões con funções
 # que levam pras telas de editar ou deletar e ate a propria pesquisa que mostra as informações cadastradas no banco
 # @index_blueprint.route("/editar", methods=['GET'])
 # def pesq():
